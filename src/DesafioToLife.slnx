@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="DesafioToLife.API/DesafioToLife.API.csproj" />
+  <Project Path="DesafioToLife.Application/DesafioToLife.Application.csproj" />
+  <Project Path="DesafioToLife.Domain/DesafioToLife.Domain.csproj" />
+  <Project Path="DesafioToLife.Infrastructure/DesafioToLife.Infrastructure.csproj" />
+</Solution>

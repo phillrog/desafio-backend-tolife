@@ -1,0 +1,6 @@
+@DesafioToLife.API_HostAddress = http://localhost:5226
+
+GET {{DesafioToLife.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
