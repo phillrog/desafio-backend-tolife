@@ -10,10 +10,13 @@ namespace DesafioToLife.Infrastructure.Repositories
         public AparelhoRepository(AppDbContext context) : base(context) { }
         public async Task<IEnumerable<Aparelho>> ObterTodos(int page, int pageSize)
         {
-
+            var dataAtual = DateTime.Now;
             return await _context.Aparelhos
                 .AsNoTracking()
-                .Include(a => a.Planos)
+                .Include(a => a.Planos
+                                    .Where(p => p.Schedule.StartDate > dataAtual)
+                                    .OrderBy(p => p.Localidade.Prioridade)
+                                )
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize) 
                 .ToListAsync();
