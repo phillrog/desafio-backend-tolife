@@ -22,6 +22,12 @@
 
         public void AdicionarPlano(Plano plano) { 
             _planos.Add(plano);
+        
+        }
+
+        public void AdicionarPlano(List<Plano> planos)
+        {
+            _planos = planos;
         }
     }
 }
