@@ -15,7 +15,7 @@ namespace DesafioToLife.Application.Services
             _aparelhoRepository = aparelhoRepository;
             _mapper = mapper;
         }
-        public async Task<IEnumerable<AparelhoDto>> Listar(int page, int pageSize)
+        public async Task<IEnumerable<AparelhoDto>> Ofertas(int page, int pageSize)
         {
             var aparelhos = await _aparelhoRepository.ObterTodos(page, pageSize);
 

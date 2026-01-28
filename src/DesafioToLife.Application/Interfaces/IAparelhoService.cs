@@ -4,6 +4,6 @@ namespace DesafioToLife.Domain.Intrerfaces
 {
     public interface IAparelhoService
     {
-        Task<IEnumerable<AparelhoDto>> Listar(int page, int pageSize);
+        Task<IEnumerable<AparelhoDto>> Ofertas(int page, int pageSize);
     }
 }
