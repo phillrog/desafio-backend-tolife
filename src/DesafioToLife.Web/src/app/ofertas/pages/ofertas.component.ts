@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AparelhoDto } from '../models/aparelho-dto.model';
 import { AparelhoService } from '../services/aparelho.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-ofertas',
@@ -9,15 +10,12 @@ import { AparelhoService } from '../services/aparelho.service';
   styleUrl: './ofertas.component.scss',
 })
 export class OfertasComponent implements OnInit {
-  aparelhos: AparelhoDto[] = [];
+  aparelhos$!: Observable<AparelhoDto[]>;
   
   constructor(private aparelhoService: AparelhoService) { }
 
   ngOnInit(): void {
-    this.aparelhoService.getOfertas(1, 100).subscribe({
-      next: (data) => this.aparelhos = data,
-      error: (err) => console.error('Erro ao carregar ofertas', err)
-    });
+    this.aparelhos$ = this.aparelhoService.getOfertas(1, 100)
   }
 
 }
